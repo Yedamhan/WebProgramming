@@ -1,0 +1,592 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+body {
+  background: #fafafa;
+}
+main {
+  display: flex;
+  justify-content: center;
+  padding: 65px 0 80px 0;
+}
+
+/* header */
+header {
+  position: fixed;
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  background-color: white;
+  padding: 15px 0 15px 0;
+  border-bottom: 1px solid #e1e1e1;
+}
+h1 {
+  font-family: "Lobster", cursive;
+  font-size: 28px;
+}
+.bar-search {
+  position: relative;
+}
+.bar-search input {
+  width: 260px;
+  padding: 8px 16px 8px 40px;
+  background-color: #efefef;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: lighter;
+}
+.bar-search input:focus {
+  outline: none;
+}
+.img-explore {
+  position: absolute;
+  top: 9px;
+  left: 16px;
+  width: 15px;
+}
+.list-nav {
+  display: flex;
+}
+.list-nav li img {
+  width: 25px;
+  height: 24px;
+  margin: 5px 23px 0 0;
+}
+.img-navProfile {
+  border-radius: 100%;
+}
+
+/* story */
+.box-story {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 470px;
+  height: 120px;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  background-color: white;
+  padding: 16px;
+  margin: 20px 0 20px 0;
+}
+.img-profile-56px {
+  width: 56px;
+  border-radius: 100%;
+  margin: 0 20px 5px 0;
+}
+.name-story {
+  font-size: 12px;
+  padding: 0 0 0 4px;
+}
+.img-story {
+  border: 3px solid transparent;
+  background-image: linear-gradient(#fff, #fff),
+    linear-gradient(
+      to right,
+      rgb(186, 22, 201) 0%,
+      rgb(255, 47, 0) 25%,
+      rgb(255, 68, 0) 50%,
+      rgb(252, 180, 47) 90%,
+      rgb(234, 223, 107) 100%
+    );
+  background-origin: border-box;
+  background-clip: content-box, border-box;
+}
+
+/* feed */
+.box-feed {
+  width: 470px;
+  border: 1px solid #e1e1e1;
+  border-radius: 10px;
+  background-color: white;
+  overflow: hidden;
+}
+.head-feed {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.profile-feed {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+.icon-more {
+  width: 20px;
+  height: 20px;
+  margin: 0 20px 0 0;
+}
+.userName-feed {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 4px 10px;
+}
+.location-feed {
+  font-size: 12px;
+  margin: 0 0 0 10px;
+}
+.img-feed {
+  width: 470px;
+}
+.icon-feed {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+.img-icon {
+  width: 25px;
+  margin: 0 10px 0 0;
+}
+.text-like {
+  font-size: 13px;
+  font-weight: bold;
+  margin: 0 15px 15px 15px;
+}
+.box-comment {
+  margin: 15px 0 20px 15px;
+}
+.text-comment {
+  display: inline-block;
+  width: 390px;
+  margin: 0 0 10px 0;
+  font-size: 14px;
+}
+.date-comment {
+  
+  margin: 0 0 14px 0;
+  font-size: 12px;
+  color: #828282;
+}
+.img-heart-comment:hover,
+.img-delete-comment:hover {
+  cursor: pointer;
+}
+.img-delete-comment {
+  margin: 0 0 2px 10px;
+}
+/* 댓글 */
+.box-chat {
+  border-top: 1px solid #e1e1e1;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+}
+.input-chat {
+  width: 350px;
+  border: none;
+}
+.btn-chat {
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  color: rgb(0, 149, 246, 0.3);
+}
+.btn-chat-effect {
+  color: rgb(0, 149, 246, 1);
+}
+.btn-chat-effect:hover {
+  cursor: pointer;
+}
+/* 모달 창 */
+/* style/main.css 또는 필요한 CSS 파일에 추가 */
+.modal {
+  display: none; /* 기본적으로 모달은 숨김 상태 */
+  position: fixed;
+  top: 0; bottom: 0; left: 0; right: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* 반투명한 배경 */
+  z-index: 999; /* 다른 요소들보다 위에 나타나도록 설정 */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 모달을 화면 중앙에 위치 */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* 모달의 너비 */
+  max-width: 600px; /* 최대 너비 */
+  position: relative;
+}
+
+.modal-content textarea,
+.modal-content input[type="file"],
+.modal-content button {
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.close {
+  position: absolute;
+  right: 10px;
+  top: 5px;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+
+.close:hover,
+close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* 오른쪽 */
+.box-aside {
+  margin: 40px 0 0 40px;
+}
+.img-profile-32px {
+  width: 32px;
+  border-radius: 100%;
+  border: 1px solid #efefef;
+}
+.box-myProfile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 320px;
+  margin: 0 0 20px 0;
+}
+.box-myProfile div {
+  display: flex;
+  align-items: center;
+}
+.box-myProfile p {
+  color: #262626;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.box-recommend {
+  width: 320px;
+  margin: 0 0 30px 0;
+}
+.box-recommend h2 {
+  color: #828282;
+  font-weight: bold;
+  font-size: 14px;
+}
+.head-recommend {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 15px 0;
+}
+
+.btn-recommend-all {
+  background-color: transparent;
+  border: none;
+  color: #262626;
+  font-weight: bold;
+  font-size: 12px;
+}
+.box-recommend-profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 0 15px 0;
+}
+.profile-recommend {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.btn-blue {
+  background-color: transparent;
+  border: none;
+  color: rgb(0, 149, 246);
+  font-weight: bold;
+  font-size: 12px;
+}
+.userName-recommend {
+  font-size: 14px;
+  color: #262626;
+  font-weight: bold;
+  margin: 0 0 4px 10px;
+}
+.follower-recommend {
+  font-size: 12px;
+  color: #8e8e8e;
+  margin: 0 0 0 10px;
+}
+
+/* footer */
+.footer {
+  width: 320px;
+  line-height: 18px;
+  font-size: 12px;
+  color: #c7c7c7;
+}
+.footer-info {
+  margin: 0 0 20px 0;
+}
+
+/* id검색 상자 */
+.box-filteredId {
+  display: none;
+  position: absolute;
+  top: 50px;
+  left: -50px;
+  width: 375px;
+  height: 375px;
+  background-color: white;
+  border-radius: 6px;
+  border: 1px solid #e1e1e1;
+  overflow: scroll;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+  padding: 10px;
+}
+.box-recentSearch {
+  position: relative;
+}
+.title-recentSearch {
+  position: absolute;
+  color: #262626;
+  font-weight: bold;
+  font-size: 16px;
+  top: 10px;
+  left: 5px;
+  margin: 10px 15px;
+}
+.content-recentSearch {
+  position: absolute;
+  color: #8e8e8e;
+  font-size: 14px;
+  font-weight: bold;
+  top: 180px;
+  left: 110px;
+}
+
+.filteredId {
+ 
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0 0 7px 0;
+}
+.filteredImg {
+  display: inline-block;
+  margin: 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 100%;
+}
+.wrapFiltered {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.wrapText {
+  display: flex;
+  flex-direction: column;
+}
+.filteredName {
+  font-size: 14px;
+  color: #8e8e8e;
+}
+
+/* 프로필 메뉴 */
+.list-profile {
+  position: relative;
+}
+.wrap-menu {
+  display: none;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  width: 230px;
+  border-radius: 6px;
+  border: 1px solid #e1e1e1;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+  padding: 20px;
+}
+.wrap-menu div {
+  display: flex;
+}
+.menu-profile,
+.menu-bookmark,
+.menu-setting,
+.menu-change {
+  padding: 0 0 25px 0;
+}
+.wrap-menu div img {
+  width: 16px;
+  height: 16px;
+  margin: 0 10px 0 0;
+}
+.wrap-menu div p,
+.wrap-menu p {
+  font-size: 14px;
+  color: #262626;
+}
+
+/* 미디어쿼리 */
+@media (max-width: 1000px) {
+  .box-aside {
+    display: none;
+  }
+  header h1 {
+    position: absolute;
+    top: 15px;
+    left: 25px;
+  }
+  .bar-search {
+    left: 110px;
+  }
+}
+@media (max-width: 800px) {
+  .bar-search input {
+    width: 200px;
+  }
+}
+
+@media (max-width: 760px) {
+  .bar-search {
+    display: none;
+  }
+  .list-nav {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+  }
+  header {
+    height: 65px;
+  }
+}
+.box-recommend-profile button {
+  
+  padding: 5px 10px;
+  background-color: #fafafa;
+  
+
+}
+
+.box-recommend-profile button:hover {
+  
+  color: black;
+}
+
+.wrap-menu {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: none;
+  flex-direction: column;
+  padding: 10px;
+  z-index: 1000;
+}
+
+.menu-profile,
+.menu-bookmark,
+.menu-setting,
+.menu-change,
+.menu-logout {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.menu-profile img,
+.menu-bookmark img,
+.menu-setting img,
+.menu-change img {
+  width: 24px;
+  margin-right: 10px;
+}
+
+.menu-profile p,
+.menu-bookmark p,
+.menu-setting p,
+.menu-change p {
+  margin: 0;
+  cursor: pointer;
+}
+
+.menu-logout p {
+  color: #f00;
+  font-weight: bold;
+}
+
+.menu-logout p:hover {
+  text-decoration: underline;
+}
+
+
+#add-post-btn {
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+#add-post-btn img {
+  width: 24px; /* 이미지 사이즈 조정 */
+  height: 24px;
+}
+
+/* 이미지 및 영상 업로드 폼 */
+#post-form {
+  position: fixed; /* 고정 위치 설정 */
+  top: 50%; /* 화면 상단에서 절반 높이에 배치 */
+  left: 50%; /* 화면 왼쪽에서 절반 너비에 배치 */
+  transform: translate(-50%, -50%); /* 중앙 정렬을 위한 이동 변환 */
+  max-width: 600px; /* 폼의 최대 너비 제한 */
+  padding: 20px; /* 내부 여백 추가 */
+  border: 1px solid #e1e1e1; /* 테두리 추가 */
+  border-radius: 10px; /* 테두리 모서리를 둥글게 만듭니다 */
+  background-color: white; /* 배경색을 흰색으로 설정합니다 */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+  z-index: 1000; /* 다른 요소보다 위에 나타나도록 설정 */
+}
+
+#post-form label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#post-text {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  resize: vertical; /* 세로 조절 허용 */
+}
+
+#post-image,
+#post-video {
+  display: block;
+  margin-top: 8px;
+}
+
+#submit-post-btn {
+  background-color: rgb(0, 149, 246, 0.3);
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#submit-post-btn:hover {
+  background-color: rgb(0, 149, 246);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

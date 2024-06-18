@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+body {
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif; 
+}
+
+.box-all {
+  text-align: center;
+  width: 350px;
+  background-color: white;
+  border: 1px solid lightgray;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.text-title {
+  font-family: "Lobster", cursive;
+  font-size: 40px;
+  margin: 20px 0 40px 0;
+}
+
+.form-login, .form-register {
+  margin-bottom: 20px;
+}
+
+#input-id,
+#input-pw,
+#input-reg-email,
+#input-reg-username, 
+#input-reg-pw {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+#btn-login,
+#btn-register {
+  width: 100%;
+  background-color: rgb(0, 149, 246, 0.3);
+  border: none;
+  border-radius: 4px;
+  padding: 10px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#btn-login:hover,
+#btn-register:hover {
+  background-color: rgb(0, 149, 246);
+}
+
+.btn-link {
+  background: none;
+  border: none;
+  color: #004f84;
+  cursor: pointer;
+  font-size: 14px;
+  text-decoration: underline;
+  margin-top: 20px;
+}
+
+.btn-link:hover {
+  text-decoration: none;
+}
+
+.message-emailError,
+.message-pwError {
+  display: none;
+  font-size: 12px;
+  margin-top: 5px;
+  color: rgb(240, 0, 0);
+}
+
+.message-forgetPw {
+  font-size: 12px;
+  color: #004f84;
+  margin-top: 20px;
+}

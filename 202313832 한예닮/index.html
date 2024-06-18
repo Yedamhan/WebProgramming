@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Darmstagram</title>
+    <link rel="stylesheet" href="style/reset.css" />
+    <link rel="stylesheet" href="style/common.css" />
+    <link rel="stylesheet" href="style/login.css" />
+  </head>
+  <body>
+    <div class="box-all">
+      <h1 class="text-title">Darmstagram</h1>
+      <form id="login-form" class="form-login">
+        <input
+          id="input-id"
+          type="text"
+          placeholder="전화번호, 사용자 이름 또는 이메일"
+        />
+        <input id="input-pw" type="password" placeholder="비밀번호" />
+        <button id="btn-login" type="submit" disabled>로그인</button>
+      </form>
+      <p class="message-emailError">*이메일 형식을 다시 확인해주세요.</p>
+      <p class="message-pwError">*비밀번호가 5글자 이상인지 확인해주세요.</p>
+      <p class="message-forgetPw">비밀번호를 잊으셨나요?</p>
+      <p id="signup-prompt">계정이 없으신가요? <button id="btn-show-register" class="btn-link">회원가입</button></p>
+      <form id="register-form" class="form-register" style="display: none;">
+        <input
+          id="input-reg-email"
+          type="email"
+          placeholder="이메일 주소"
+        />
+        <input id="input-reg-username" type="text" placeholder="사용자 이름" />
+        <input id="input-reg-pw" type="password" placeholder="비밀번호" />
+        <button id="btn-register" type="submit" disabled>가입</button>
+      </form>
+    </div>
+    <script src="js/login.js"></script>
+  </body>
+</html>
